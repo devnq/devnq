@@ -1,0 +1,137 @@
+body {
+  background-color: #2e2e2e;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', Futura, 'Trebuchet MS', Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24pt;
+  color: #d33232;
+}
+
+h2 {
+  font-size: 18pt;
+}
+
+.btn-primary, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:visited {
+  background-color: #d33232;
+  border: 1px solid #d33232;
+}
+
+.btn-primary:not(:disabled):not(.disabled):hover, .btn-primary:not(:disabled):not(.disabled):focus {
+  background-color: #ba1321;
+  border: 1px solid #ba1321;
+}
+
+#wrapper {
+  position: absolute;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  padding: 30px 0;
+}
+
+#header .navbar-brand-image {
+  width: 177px;
+}
+
+#header .navbar-nav {
+  font-family: 'Montserrat', Futura, 'Trebuchet MS', Arial, sans-serif;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-feature-a {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 2000px;
+  width: 80px;
+  position: absolute;
+  top: -700px;
+  left: -50px;
+  transform: rotate(-45deg);
+}
+
+.hero-feature-b {
+  background-color: rgba(255, 255, 255, 0.05);
+  height: 2000px;
+  width: 800px;
+  position: absolute;
+  top: -750px;
+  left: -50px;
+  transform: rotate(-45deg);
+}
+
+#content {
+  flex: 1 0 auto;
+  padding-bottom: 30px;
+}
+
+.dark-content {
+  color: #fff;
+}
+
+
+/* next-meetup-default is shown until results are loaded then #next-meetup-event or #next-meetup-none are shown */
+#next-meetup-default {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+#next-meetup-event, #next-meetup-none {
+  display: none;
+}
+
+#next-meetup-none p {
+  font-style: italic;
+}
+
+#footer {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px 0 5px 0;
+}
+
+.footer-com {
+  min-width: 135px;
+  width: 20%;
+  text-align: center;
+}
+
+.footer-com a p {
+  font-size: 10pt;
+}
+
+.footer-com i, .footer-com svg {
+  margin: 20px;
+}
+
+.footer-com .btn {
+  color: #787878;
+}
+
+.footer-com .btn:hover {
+  color: #2e2e2e;
+}
+
+.footer-meta {
+  font-size: 10pt;
+}
+
+.footer-meta p {
+  margin: 0;
+}
