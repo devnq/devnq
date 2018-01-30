@@ -1,1 +1,1 @@
-exclude: ['node_modules', 'webpack']
+exclude: ['node_modules', 'webpack', 'README.md', 'package.json']

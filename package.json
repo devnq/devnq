@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack && jekyll build",
-    "serve": "node_modules/.bin/concurrently --kill-others \"node_modules/.bin/webpack --watch\" \" jekyll serve\""
+    "serve": "node_modules/.bin/concurrently --kill-others \"node_modules/.bin/webpack --watch\" \" jekyll serve\"",
+    "predeploy": "npm run build",
+    "deploy": "node_modules/.bin/gh-pages -d _site"
   },
   "repository": {
     "type": "git",
