@@ -52,7 +52,7 @@ h2 {
   left: 0;
   z-index: -1;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -94,6 +94,22 @@ h2 {
 
 #next-meetup-event, #next-meetup-none {
   display: none;
+}
+
+#next-meetup-event {
+  margin: 20px 0;
+}
+
+#next-meetup-event #meetup-event-datetime {
+  font-size: 0.8em;
+}
+
+#next-meetup-event #meetup-event-location {
+  font-style: italic;
+}
+
+#next-meetup-event #meetup-event-link {
+  margin-top: 20px;
 }
 
 #next-meetup-none p {

@@ -5,7 +5,6 @@ function getNextMeetup(callback) {
       method: "get",
       uri: "https://d2qrtp8csnyzho.cloudfront.net/dev_nq/events?scroll=next_upcoming&photo-host=public&page=1&sig_id=204758206&sig=f08d518a43af7703b557e4d77dc2a85cd18a28b0",
   }, function (err, resp, body) {
-    console.log(resp)
     if(resp.statusCode == 200) {
       return callback(null, JSON.parse(body));
     }
@@ -17,10 +16,13 @@ function getNextMeetup(callback) {
 function renderNextMeetup(meetupData) {
   const nextMeetup = meetupData[0];
   const nextMeetupDate = new Date(nextMeetup.local_date+"T"+nextMeetup.local_time);
+  const dateOutputOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
+  const dateOutput = nextMeetupDate.toLocaleString("en-US", dateOutputOptions);
+
   document.getElementById("meetup-event-title").innerHTML = nextMeetup.name;
-  document.getElementById("meetup-event-datetime").innerHTML = nextMeetupDate;
+  document.getElementById("meetup-event-datetime").innerHTML = dateOutput;
   document.getElementById("meetup-event-location").innerHTML = nextMeetup.venue.name+", "+nextMeetup.venue.address_1+", "+nextMeetup.venue.city;
-  document.getElementById("meetup-event-title").attributes.href = nextMeetup.link;
+  document.getElementById("meetup-event-link").setAttribute('href', nextMeetup.link);
 
   hideDefaultMeetup();
   document.getElementById("next-meetup-event").style.display = "block";

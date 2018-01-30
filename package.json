@@ -1,17 +1,17 @@
 {
   "name": "devnq",
   "version": "1.0.0",
-  "description": "",
+  "description": "DevNQ Website",
   "main": "index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack && jekyll build",
-    "watch": ""
+    "serve": "node_modules/.bin/concurrently --kill-others \"node_modules/.bin/webpack --watch\" \" jekyll serve\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tjdavey/devnq.git"
   },
-  "author": "",
+  "author": "Tristan Davey <tristan@tristandavey.com>",
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/tjdavey/devnq/issues"
@@ -25,6 +25,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2017": "^6.24.1",
     "bootstrap": "^4.0.0",
+    "concurrently": "^3.5.1",
     "css-loader": "^0.28.9",
     "exports-loader": "^0.6.4",
     "extract-text-webpack-plugin": "^3.0.2",
