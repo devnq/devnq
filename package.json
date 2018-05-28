@@ -37,5 +37,8 @@
     "popper.js": "^1.12.9",
     "style-loader": "^0.20.1",
     "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-pro-light": "^5.0.13"
   }
 }

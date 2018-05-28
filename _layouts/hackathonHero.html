@@ -1,0 +1,31 @@
+{% include header.html %}
+  {% include heroBackground.html %}
+  <div id="hero-content" class="container dark-content">
+    <h1 class="mb-4">
+      DevNQ Hackathon
+    </h1>
+    <div class="row mb-5">
+      <div class="col-md-8">
+        <p>
+          The DevNQ Hackthon is a weekend-long programming and design sprint. It brings together industry professionals, students and the community to solve the needs of our community today and into the future.
+        </p>
+        <div class="float-right">
+          <a href="{{page.heroSecondaryLink}}" class="btn btn-link text-light mr-2">
+            {{page.heroSecondaryText}}
+          </a>
+          <a href="https://www.eventbrite.com/e/devnq-hackathon-2018-tickets-46497789139" class="btn btn-primary">
+            Register Now
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-4 text-center d-none d-md-block">
+        <div style="font-size: 27px;">July 14th-15th</div>
+        <div class="font-weight-bold">James Cook University</div>
+        <div class="font-weight-light small" style="letter-spacing: 2px">Townsville, Australia</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-content">
+    {{ content }}
+  </div>
+{% include footer.html %}

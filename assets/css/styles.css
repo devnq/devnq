@@ -34,7 +34,7 @@ h2 {
 #wrapper {
   position: absolute;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -56,7 +56,7 @@ h2 {
   top: 0;
   left: 0;
   z-index: -1;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
@@ -86,10 +86,36 @@ h2 {
   padding-bottom: 30px;
 }
 
+.content-area {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.content-area h2, .content-area h3 {
+  margin-bottom: .8em;
+}
+
 .dark-content {
   color: #fff;
 }
 
+.sunken {
+  position: relative;
+  width: 100%;
+  background: #eee;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.sunken-image {
+  display: none; /* overridden by bootstrap at appropriate sizes */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+}
 
 /* next-meetup-default is shown until results are loaded then #next-meetup-event or #next-meetup-none are shown */
 #next-meetup-default {
@@ -121,10 +147,30 @@ h2 {
   font-style: italic;
 }
 
-#footer {
+.page-content, .footer {
   background-color: #fff;
   width: 100%;
   padding: 20px 0 5px 0;
+}
+
+.hack-col {
+  min-width: 135px;
+  width: 33%;
+  text-align: center;
+}
+
+.hack-sponsor-col {
+  min-width: 135px;
+  width: 20%;
+  text-align: center;
+}
+
+.hack-sponsor-logo {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-width: 200px;
 }
 
 .footer-com {
