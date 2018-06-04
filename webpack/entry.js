@@ -16,8 +16,8 @@ import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube';
 import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
 import faCalendar from '@fortawesome/fontawesome-pro-light/faCalendar';
 import faMapMarker from '@fortawesome/fontawesome-pro-light/faMapMarker';
-import faQuestionCircle from '@fortawesome/fontawesome-pro-light/faQuestionCircle';
+import faBullhorn from '@fortawesome/fontawesome-pro-light/faBullhorn';
 
-fontawesome.library.add(faEnvelope, faSpinner, faFacebook, faMeetup, faYoutube, faTwitter, faSlack, faCalendar, faMapMarker, faQuestionCircle);
+fontawesome.library.add(faEnvelope, faSpinner, faFacebook, faMeetup, faYoutube, faTwitter, faSlack, faCalendar, faMapMarker, faBullhorn);
 
 import './components/meetup'

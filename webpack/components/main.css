@@ -81,6 +81,11 @@ h2 {
   padding-bottom: 30px;
 }
 
+.hero-footer-highlight {
+  background-color: #d33232;
+  color: #fff;
+}
+
 .content-area {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -156,7 +161,7 @@ h2 {
 
 .hack-sponsor-col {
   min-width: 135px;
-  width: 20%;
+  width: 33%;
   text-align: center;
 }
 
@@ -196,4 +201,8 @@ h2 {
 
 .footer-meta p {
   margin: 0;
+}
+
+.text-montserrat {
+  font-family: "Montserrat", Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
