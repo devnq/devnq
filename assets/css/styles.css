@@ -31,6 +31,18 @@ h2 {
   border: 1px solid #ba1321;
 }
 
+.btn-hack18, .btn-hack18:not(:disabled):not(.disabled):active, .btn-hack18:visited {
+  color: #fff;
+  background-color: #209dd1;
+  border: 1px solid #209dd1;
+}
+
+.btn-hack18:not(:disabled):not(.disabled):hover, .btn-hack18:not(:disabled):not(.disabled):focus {
+  color: #fff;
+  background-color: #6cc5e9;
+  border: 1px solid #6cc5e9;
+}
+
 #wrapper {
   position: absolute;
   min-height: 100vh;
