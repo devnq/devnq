@@ -1,28 +1,40 @@
 {% include header.html %}
   {% include heroBackground.html %}
   <div id="hero-content" class="container dark-content">
-    <h1 class="mb-4">
-      DevNQ Hackathon
-    </h1>
     <div class="row mb-5">
+      <div class="col-lg-8">
+        <h1 class="mb-3">
+          <img src="/assets/images/hackathon-2018/hackathon-logo.svg" style="width:100%" alt="Education Innovation Hackathon">
+        </h1>
+      </div>
+      <div class="col-sm-4 text-center d-none d-lg-block text-uppercase text-montserrat">
+        <div style="font-size: 33px; line-height: 1;">July 14th-15th</div>
+        <div class="font-weight-bold mt-lg-3" style="font-size: 19px; line-height: 1;">James Cook University</div>
+        <div class="font-weight-light mt-lg-2" style="font-size: 19px; letter-spacing: .5px; line-height: 1;">Townsville, Australia</div>
+      </div>
+    </div>
+    <div class="row mb-md-5">
       <div class="col-md-8">
         <p>
           The DevNQ Hackthon is a weekend-long programming and product design sprint. It brings together industry professionals, students and the community to find innovative solutions to advance our community and the the world.
         </p>
-        <div class="float-right">
-          <a href="{{page.heroSecondaryLink}}" class="btn btn-link text-light mr-2">
-            {{page.heroSecondaryText}}
-          </a>
-          <a href="https://www.eventbrite.com/e/devnq-hackathon-2018-tickets-46497789139" class="btn btn-primary">
-            Register Now
-          </a>
-        </div>
       </div>
-      <div class="col-sm-4 text-center d-none d-md-block">
-        <div style="font-size: 27px;">July 14th-15th</div>
-        <div class="font-weight-bold">James Cook University</div>
-        <div class="font-weight-light small" style="letter-spacing: 2px">Townsville, Australia</div>
+      <div class="col-sm-4 d-none d-md-block text-center text-montserrat">
+        <a href="https://www.eventbrite.com/e/devnq-hackathon-2018-tickets-46497789139" class="btn btn-hack18 btn-block" style="max-width: 270px; margin-left: auto; margin-right: auto">
+          Register Now
+        </a>
+        <a href="{{page.heroSecondaryLink}}" class="btn btn-outline-secondary btn-block mt-3" style="max-width: 270px; margin-left: auto; margin-right: auto">
+          {{page.heroSecondaryText}}
+        </a>
       </div>
+    </div>
+    <div class="text-right d-block d-md-none text-montserrat mb-5">
+      <a href="{{page.heroSecondaryLink}}" class="btn btn-outline-secondary">
+        {{page.heroSecondaryText}}
+      </a>
+      <a href="https://www.eventbrite.com/e/devnq-hackathon-2018-tickets-46497789139" class="btn btn-hack18 ml-2">
+        Register Now
+      </a>
     </div>
   </div>
   <div class="page-content">
