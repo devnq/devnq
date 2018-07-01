@@ -38,6 +38,15 @@ h2 {
   border: 1px solid #6cc5e9;
 }
 
+.schedule-time {
+  display: inline-block;
+  width: 100px;
+}
+
+.schedule-desc {
+  margin-left: 100px;
+}
+
 #wrapper {
   position: absolute;
   min-height: 100vh;
