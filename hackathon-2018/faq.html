@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300|Montserrat:600|Raleway:400|Raleway:600">
     <script defer type="text/javascript" src="/assets/js/bundle.js"></script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="0">
     <div id="wrapper">
       <div id="header" class="container">
         <nav class="navbar navbar-expand-sm navbar-dark">
@@ -114,49 +114,126 @@
   </div>
   <div class="page-content">
     <div class="container">
-  <h3>Frequently Asked Questions</h3>
-  <h4 class="mt-4">What is a hackathon?</h4>
-  <p>
-    A hackathon is an event where teams of programmers, designers and subject-matter-experts collaborate to complete a project in a limited time period to complete a project.
-  </p>
-  <h4 class="mt-2">Who can participate?</h4>
-  <p>
-    Anybody can participate in the DevNQ Hackathon. We welcome participants of all skill levels and disciplines. Think about what skills you can bring and be prepared to adapt and learn new things to meet the needs of your team.
-  </p>
-  <h4 class="mt-2">How do I join a team?</h4>
-  <p>
-    Find some friends, colleagues or others with like-minded ideas. Teams will have an opportunity to formulate ideas, pitch these to other participants and rearrange teams on the day. If you don't have a team come along and find a team doing something you want to help make a reality.
-  </p>
-  <h4 class="mt-2">What do I need to bring?</h4>
-  <p>
-    You should bring whatever tools you might need to complete a project with your skills. We have some suggestions on what you may need:
-    <ul>
-      <li>Laptop/Computer</li>
-      <li>Power and charging cables</li>
-      <li>Mouse and/or keyboard</li>
-      <li>Testing/demo devices (phones, tablets, etc.)</li>
-      <li>Prototyping equipment</li>
-    </ul>
-  </p>
-  <h4 class="mt-2">Does it cost anything?</h4>
-  <p>
-    Entry costs $5.00. You can pre-pay this when you register for the event or pay at the door. This fee helps us cover the some of the costs of running the event.
-  </p>
-  <h4 class="mt-2">Can I bring my own project?</h4>
-  <p>
-    Teams and individuals are welcome to bring their own project and ideas. However, we ask that you only present work completed during the hackathon for judging.
-  </p>
-  <h4 class="mt-2">Is alcohol allowed?</h4>
-  <p>
-    The DevNQ Hackathon is an alcohol and drug free event. Please do not bring alcohol or illicit drugs. Softdrinks, water and other refreshments will be provided.
-  </p>
-  <h4 class="mt-2">How do I attend?</h4>
-  <p>
-    Click the 'register here' button below to register for the DevNQ Hackathon with EventBrite.
-  </p>
-  <a class="btn btn-primary mt-2" href="https://www.eventbrite.com/e/devnq-hackathon-2018-tickets-46497789139">
-    Register here
-  </a>
+  <h3 class="mb-4 mt-4">Frequently Asked Questions</h3>
+  <div class="row">
+    <div class="col-md-8">
+
+      <h4 class="mt-2" id="c-hackathon">Our Hackathon</h4>
+      <h5 class="mt-4">What is a hackathon?</h5>
+      <p>
+        A hackathon is an event where teams of programmers, designers and subject-matter-experts collaborate to complete a project in a limited time period to complete a project.
+      </p>
+      <h5 class="mt-2">Who can participate?</h5>
+      <p>
+        Anybody can participate in the DevNQ Hackathon. We welcome participants of all skill levels and disciplines. Think about what skills you can bring and be prepared to adapt and learn new things to meet the needs of your team.
+      </p>
+
+      <h4 class="mt-5" id="c-attending">Attending</h4>
+      <h5 class="mt-2">Where is the Hackathon?</h5>
+      <p>
+        The hackathon is being held on the Ground Floor of Building 34 at James Cook University in Townsville.
+      </p>
+      <iframe width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Building%2034%20Douglas%20QLD&key=AIzaSyD4CoVOY4Dqs7RmBdXBYUQ0cVqQVjJLNxE" allowfullscreen></iframe>
+
+      <h5 class="mt-2">Where can I park?</h5>
+      <p>
+        Parking is available in the carpark adjacent to Building 34 off James Cook Drive. All parking at JCU is free during the event.
+      </p>
+
+      <h5 class="mt-2">Can I come if I'm not competing?</h5>
+      <p>
+        Visitors are welcome to the event during daylight hours. We only ask you register with our event team on arrival.
+      </p>
+      <p>
+        Parents, guardians and teachers accompanying children will be permitted to stay throughout the event.
+      </p>
+
+
+      <h4 class="mt-5" id="c-competing">Competing</h4>
+      <h5 class="mt-2">Does it cost anything to compete?</h5>
+      <p>
+        Entry costs $5.00. You can pre-pay this when you register for the event or pay at the door. This fee helps us cover the some of the costs of running the event.
+      </p>
+      <h5 class="mt-2">How do I compete?</h5>
+      <p>
+        Competitors are required to <a href="https://www.eventbrite.com/e/devnq-hackathon-2018-tickets-46497789139">register with EventBrite</a>. Registrations are essential.
+      </p>
+      <h5 class="mt-2">Do I have to stay for the whole event?</h5>
+      <p>
+        Competitors are encouraged to attend the opening, judging presentations and presentation ceremonies however, there is no requirement to stay for the entire event. Teams must be present for the judging presentations and presentation ceremonies to be eligable to win a prize.
+      </p>
+      <p>
+        Whilst teams are welcome to work the full 24 hours, we strongly encourage individuals to sleep for several hours at some point in the event. Check out the <a href="/hackathon-2018/schedule">schedule page</a> for figuring our the best time to grab some ZZZs.
+      </p>
+      <h5 class="mt-2">What do I need to bring to compete?</h5>
+      <p>
+        You should bring whatever tools you might need to complete a project with your skills. We have some suggestions on what you may need:
+        <ul>
+          <li>Laptop/Computer</li>
+          <li>Power and charging cables</li>
+          <li>Mouse and/or keyboard</li>
+          <li>Testing/demo devices (phones, tablets, etc.)</li>
+          <li>Prototyping equipment</li>
+        </ul>
+      </p>
+
+      <h4 class="mt-5" id="c-teams">Teams</h4>
+      <h5 class="mt-2">How do I join a team?</h5>
+      <p>
+        Find some friends, colleagues or others with like-minded ideas. Teams will have an opportunity to formulate ideas, pitch these to other participants and rearrange teams on the day. If you don't have a team come along and find a team doing something you want to help make a reality.
+      </p>
+      <h5 class="mt-2">How big can my team be?</h5>
+      <p>
+        Competing teams can be from 1 to 5 members. Teams exceeding 5 members will not be accepted.
+      </p>
+
+      <h4 class="mt-5" id="c-projects">Projects</h4>
+      <h5 class="mt-2">How do I come up with a project?</h5>
+      <p>
+        In the lead-up to the event we'll be providing some problem statements to help get the creative juices flowing. In the meantime think about your educational experiences and where they could have been improved.
+      </p>
+      <h5 class="mt-2">Can I bring my own project?</h5>
+      <p>
+        Teams and individuals are welcome to bring their own project and ideas. However, we ask that you only present work completed during the hackathon for judging.
+      </p>
+
+      <h4 class="mt-5" id="c-food">Food and Drink</h4>
+      <h5 class="mt-2">Is food supplied at the event?</h5>
+      <p>
+        Four meals will be supplied at given times during the event. You can find out more information on these meals on the <a href="/hackathon-2018/schedule">schedule page</a>. Snacks, softdrinks, and hot tea and coffee will be provided throughout the event.
+      </p>
+      <h5 class="mt-2">Is alcohol allowed?</h5>
+      <p>
+        The DevNQ Hackathon is an alcohol and drug free event. Please do not bring alcohol or illicit drugs. Softdrinks, water and other refreshments will be provided.
+      </p>
+      <h5 class="mt-2">Can you cater to my special dietary requirements?</h5>
+      <p>
+        We try and cater to all the needs of all our event attendees. After registering <a href="mailto:info@devnq.org">contact us</a> and let us know your requirements. We'll try our hardest to accommodate your requirements.
+      </p>
+    </div>
+    <div class="col-md-4 d-none d-md-block">
+      <div class="sticky-top">
+        <nav id="navbar" class="navbar navbar-light bg-light mb-4">
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link nav" href="#c-hackathon">Our Hackathon</a>
+            <a class="nav-link" href="#c-attending">Attending</a>
+            <a class="nav-link" href="#c-competing">Competing</a>
+            <a class="nav-link" href="#c-teams">Teams</a>
+            <a class="nav-link" href="#c-projects">Projects</a>
+            <a class="nav-link" href="#c-food">Food</a>
+          </nav>
+        </nav>
+        <div class="card bg-light border-0 mb-5">
+          <h5 class="card-title mt-4 ml-4 mb-1 font-weight-bold">Even more information...</h5>
+          <div class="card-body">
+            <p><a class="btn btn-info btn-block" href="/hackathon-2018/schedule">View the Schedule</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
   </div>
     <div id="footer" class="footer">
