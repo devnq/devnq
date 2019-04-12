@@ -1,0 +1,159 @@
+version: 2.1
+executors:
+  jekyll:
+    docker:
+      - image: circleci/ruby:2.4.2-node
+    working_directory: ~/repo
+    environment:
+      BUNDLE_PATH: ~/repo/vendor/bundle
+
+jobs:
+  build-test:
+    executor: jekyll
+    steps:
+      - checkout
+
+      # Restore cached dependencies
+      - restore_cache:
+          keys:
+            - node-deps-{{ checksum "package-lock.json" }}
+            - ruby-deps-{{ checksum "Gemfile.lock" }}
+
+      # Setup dependency environment
+      - run:
+          name: Prepare Ruby Bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+
+      - run:
+          name: Configure NPM FontAwesome Repository Access
+          command: npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" $FA_NPM_TOKEN
+
+      # Install and update dependencies
+      - run:
+          name: Bundle Install
+          command: bundle install
+      - run:
+          name: npm install
+          command: npm install
+
+      # Save latest cached dependencies
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-deps-{{ checksum "package-lock.json" }}
+
+      - save_cache:
+          paths:
+            - vendor/bundle
+          key: ruby-deps-{{ checksum "Gemfile.lock" }}
+
+      # run build
+      - run:
+          name: Build
+          command: npm run build
+
+      # Run basic tests
+      - run:
+          name: Validate HTML Output
+          command: |
+            bundle exec htmlproofer ./_site \
+              --assume-extension ./_site \
+              --allow-hash-href \
+              --check-favicon  \
+              --check-html \
+              --disable-external
+
+      - store_artifacts:
+          path: /_site
+          destination: build
+
+  build-test-deploy:
+    executor: jekyll
+    steps:
+      - checkout
+
+      # Restore cached dependencies
+      - restore_cache:
+          keys:
+            - node-deps-{{ checksum "package-lock.json" }}
+            - ruby-deps-{{ checksum "Gemfile.lock" }}
+
+      # Setup deployment environment
+      - run:
+          name: Configure Git for Github Pages Deployment
+          command: |
+            git config --global user.email "circleci@devnq.org"
+            git config --global user.name "Circle CI"
+
+      # Setup dependency environment
+      - run:
+          name: Prepare Ruby Bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+
+      - run:
+          name: Configure NPM FontAwesome Repository Access
+          command: npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" $FA_NPM_TOKEN
+
+      # Install and update dependencies
+      - run:
+          name: Bundle Install
+          command: bundle install
+      - run:
+          name: npm install
+          command: npm install
+
+      # Save latest cached dependencies
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-deps-{{ checksum "package-lock.json" }}
+
+      - save_cache:
+          paths:
+            - vendor/bundle
+          key: ruby-deps-{{ checksum "Gemfile.lock" }}
+
+      # Run build
+      - run: npm run build
+
+      # Run basic tests
+      - run:
+          name: Validate HTML Output
+          command: |
+            bundle exec htmlproofer ./_site \
+              --assume-extension ./_site \
+              --allow-hash-href \
+              --check-favicon  \
+              --check-html \
+              --disable-external
+
+      - store_artifacts:
+          path: /_site
+          destination: build
+
+      # Deploy the website to GH Pages.
+      - deploy:
+          command: npm run deploy
+
+workflows:
+  version: 2
+  # Build on all source branches and automatically deploy on Master
+  build-test-deploy:
+    jobs:
+      - build-test:
+          filters:
+            branches:
+              ignore:
+                - master
+                - gh-pages
+      - build-test-deploy:
+          filters:
+            branches:
+              only:
+                - master

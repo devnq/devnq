@@ -1,2 +1,2 @@
 url: http://devnq.org
-exclude: ['node_modules', 'webpack', 'README.md', 'package.json', 'package-lock.json']
+exclude: ['node_modules', 'vendor', 'webpack', 'README.md', 'package.json', 'package-lock.json']
