@@ -1,6 +1,7 @@
 import xhr from 'xhr';
+import * as meetup from './meetup';
 
-function getNextMeetup(callback) {
+export function getNextMeetup(callback) {
   xhr({
       method: "get",
       uri: "https://d2qrtp8csnyzho.cloudfront.net/dev_nq/events?scroll=next_upcoming&photo-host=public&page=1&sig_id=204758206&sig=f08d518a43af7703b557e4d77dc2a85cd18a28b0",
@@ -13,7 +14,7 @@ function getNextMeetup(callback) {
   });
 }
 
-function renderNextMeetup(meetupData) {
+export function renderNextMeetup(meetupData) {
   const nextMeetup = meetupData[0];
   const nextMeetupDate = new Date(nextMeetup.local_date+"T"+nextMeetup.local_time);
   const dateOutputOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
@@ -24,27 +25,31 @@ function renderNextMeetup(meetupData) {
   document.getElementById("meetup-event-location").innerHTML = nextMeetup.venue.name+", "+nextMeetup.venue.address_1+", "+nextMeetup.venue.city;
   document.getElementById("meetup-event-link").setAttribute('href', nextMeetup.link);
 
-  hideDefaultMeetup();
+  meetup.hideDefaultMeetup();
   document.getElementById("next-meetup-event").style.display = "block";
 }
 
-function renderNoneMeetup() {
-  hideDefaultMeetup();
+export function renderNoneMeetup() {
+  meetup.hideDefaultMeetup();
   document.getElementById("next-meetup-none").style.display = "block";
 }
 
-function hideDefaultMeetup() {
+export function hideDefaultMeetup() {
   document.getElementById("next-meetup-default").style.display = "none";
 }
 
-function startMeetupWidget() {
-  getNextMeetup(function(err, result) {
+export function startMeetupWidget(callback) {
+  meetup.getNextMeetup(function(err, result) {
     if(!err) {
-      return renderNextMeetup(result);
+      meetup.renderNextMeetup(result);
+      return callback();
     }
 
-    renderNoneMeetup();
+    meetup.renderNoneMeetup();
+    return callback();
   });
 };
 
-startMeetupWidget();
+window.addEventListener('load', function () {
+  meetup.startMeetupWidget(function() {});
+});
