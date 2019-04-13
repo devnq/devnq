@@ -1,5 +1,8 @@
 # DevNQ Website
 
+[![CircleCI](https://circleci.com/gh/tjdavey/devnq/tree/master.svg?style=svg)](https://circleci.com/gh/tjdavey/devnq/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/tjdavey/devnq/badge.svg?branch=master)](https://coveralls.io/github/tjdavey/devnq?branch=master)
+
 This repository contains the source code for the DevNQ Website,
 [devnq.org](http://devnq.org). If you're looking to find out more about
 DevNQ, North Queensland's software developer community, head to

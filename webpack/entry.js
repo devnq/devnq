@@ -20,4 +20,4 @@ import faBullhorn from '@fortawesome/fontawesome-pro-light/faBullhorn';
 
 fontawesome.library.add(faEnvelope, faSpinner, faFacebook, faMeetup, faYoutube, faTwitter, faSlack, faCalendar, faMapMarker, faBullhorn);
 
-import './components/meetup'
+import * as meetup from './components/meetup';
