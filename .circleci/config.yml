@@ -33,7 +33,7 @@ jobs:
 
       # Install and update dependencies
       - run:
-          name: npm install
+          name: Install Dependencies
           command: npm install
 
       # Save latest cached dependencies
@@ -93,7 +93,7 @@ jobs:
 
       # Install and update dependencies
       - run:
-          name: npm install
+          name: Install Dependencies
           command: npm install
 
       # Save latest cached dependencies
