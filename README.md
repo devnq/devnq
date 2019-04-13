@@ -16,24 +16,27 @@ Contribution section below.
 Three steps are required to setup the DevNQ website for development or
 build.
 
-** 1. Configure NPM Access to FontAwesome Pro Repositories**
+#### Prerequisites
+
+- Ruby 2.4.2
+- Bundle 2.0.1
+- Node.js 8.x or higher
+- NPM 5.x or higher
+
+#### 1. Configure NPM Access to FontAwesome Pro Repositories
 
 ```
 npm config set "@fortawesome:registry" https://npm.fontawesome.com/
 npm config set "//npm.fontawesome.com/:_authToken" <FontAwesome Pro Token>
 ```
 
-** 2. Install required Ruby dependencies **
-
-```
-bundle install
-```
-
-** 3. Install required Node.js dependencies **
+#### 2. Install required dependencies
 
 ```
 npm install
 ```
+
+NPM install will install all NPM dependencies followed by Ruby Bundle dependencies.
 
 ### Local Development
 

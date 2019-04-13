@@ -4,8 +4,10 @@
   "description": "DevNQ Website",
   "main": "index.js",
   "scripts": {
+    "postinstall": "bundle install",
     "build": "node_modules/.bin/webpack && jekyll build",
     "serve": "node_modules/.bin/concurrently --kill-others \"node_modules/.bin/webpack --watch\" \" jekyll serve\"",
+    "test": "bundle exec htmlproofer ./_site --assume-extension ./_site --check-favicon --check-html",
     "predeploy": "npm run build",
     "deploy": "node_modules/.bin/gh-pages -d _site -m 'Website deployment [ci skip]'"
   },
