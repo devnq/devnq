@@ -52,10 +52,15 @@ jobs:
           name: Build
           command: npm run build
 
-      # Run basic tests
+      # Run tests
       - run:
-          name: Validate HTML Output
+          name: Run Tests
           command: npm run test
+
+      # Submit coverage
+      - run:
+          name: Submit Coverage
+          command: npm run cov:coveralls
 
       - store_artifacts:
           path: /_site
@@ -110,10 +115,15 @@ jobs:
       # Run build
       - run: npm run build
 
-      # Run basic tests
+      # Run tests
       - run:
-          name: Validate HTML Output
+          name: Run Tests
           command: npm run test
+
+      # Submit coverage
+      - run:
+          name: Submit Coverage
+          command: npm run cov:coveralls
 
       - store_artifacts:
           path: /_site
