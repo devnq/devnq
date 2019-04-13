@@ -141,6 +141,12 @@ jobs:
       - deploy:
           command: npm run deploy
 
+      - run:
+          name: Create Github Tag
+          command: |
+            git tag deployment-`date +"%Y-%m-%dT%H-%M-%SZ"` && \
+            git push origin deployment-`date +"%Y-%m-%dT%H-%M-%SZ"`
+
 workflows:
   version: 2
   # Build on all source branches and automatically deploy on Master
