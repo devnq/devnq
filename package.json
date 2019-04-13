@@ -14,7 +14,7 @@
     "url": "git+https://github.com/tjdavey/devnq.git"
   },
   "author": "Tristan Davey <tristan@tristandavey.com>",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/tjdavey/devnq/issues"
   },
