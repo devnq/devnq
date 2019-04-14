@@ -40,7 +40,7 @@ export function hideDefaultMeetup() {
 
 export function startMeetupWidget(callback) {
   meetup.getNextMeetup(function(err, result) {
-    if(!err) {
+    if(!err && Array.isArray(result) && result.length > 0) {
       meetup.renderNextMeetup(result);
       return callback();
     }
