@@ -10796,7 +10796,7 @@ function hideDefaultMeetup() {
 
 function startMeetupWidget(callback) {
   __WEBPACK_IMPORTED_MODULE_1__meetup__["a" /* getNextMeetup */](function(err, result) {
-    if(!err) {
+    if(!err && Array.isArray(result) && result.length > 0) {
       __WEBPACK_IMPORTED_MODULE_1__meetup__["c" /* renderNextMeetup */](result);
       return callback();
     }
