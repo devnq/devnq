@@ -1,2 +1,2 @@
-url: http://devnq.org
+url: https://devnq.org
 exclude: ['node_modules', 'vendor', 'webpack', 'coverage', 'README.md', 'CODE-OF-CONDUCT.md', 'LICENSE', 'Gemfile', 'Gemfile.lock', 'package.json', 'package-lock.json']
