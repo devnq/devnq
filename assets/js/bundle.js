@@ -10772,13 +10772,18 @@ function getNextMeetup(callback) {
 
 function renderNextMeetup(meetupData) {
   const nextMeetup = meetupData[0];
-  const nextMeetupDate = new Date(nextMeetup.local_date+"T"+nextMeetup.local_time);
+  const nextMeetupDate = new Date(nextMeetup.time);
   const dateOutputOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
   const dateOutput = nextMeetupDate.toLocaleString("en-US", dateOutputOptions);
+  const location = ["name", "address_1", "city"].map(function(p) {
+    return nextMeetup.venue[p]
+  }).filter(function(addressPart) {
+    return addressPart;
+  }).join(", ");
 
   document.getElementById("meetup-event-title").innerHTML = nextMeetup.name;
   document.getElementById("meetup-event-datetime").innerHTML = dateOutput;
-  document.getElementById("meetup-event-location").innerHTML = nextMeetup.venue.name+", "+nextMeetup.venue.address_1+", "+nextMeetup.venue.city;
+  document.getElementById("meetup-event-location").innerHTML = location;
   document.getElementById("meetup-event-link").setAttribute('href', nextMeetup.link);
 
   __WEBPACK_IMPORTED_MODULE_1__meetup__["b" /* hideDefaultMeetup */]();
@@ -10809,6 +10814,7 @@ function startMeetupWidget(callback) {
 window.addEventListener('load', function () {
   __WEBPACK_IMPORTED_MODULE_1__meetup__["e" /* startMeetupWidget */](function() {});
 });
+
 
 /***/ }),
 /* 5 */
