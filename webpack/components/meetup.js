@@ -16,7 +16,6 @@ export function getNextMeetup(callback) {
 
 export function renderNextMeetup(meetupData) {
   const nextMeetup = meetupData[0];
-  window.nextMeetup = nextMeetup
   const nextMeetupDate = new Date(nextMeetup.time);
   const dateOutputOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
   const dateOutput = nextMeetupDate.toLocaleString("en-US", dateOutputOptions);
