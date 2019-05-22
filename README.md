@@ -1,12 +1,12 @@
 # DevNQ Website
 
-[![CircleCI](https://circleci.com/gh/tjdavey/devnq/tree/master.svg?style=svg)](https://circleci.com/gh/tjdavey/devnq/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/tjdavey/devnq/badge.svg?branch=master)](https://coveralls.io/github/tjdavey/devnq?branch=master)
+[![CircleCI](https://circleci.com/gh/devnq/devnq/tree/master.svg?style=svg)](https://circleci.com/gh/devnq/devnq/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/devnq/devnq/badge.svg?branch=master)](https://coveralls.io/github/devnq/devnq?branch=master)
 
 This repository contains the source code for the DevNQ Website,
-[devnq.org](http://devnq.org). If you're looking to find out more about
+[devnq.org](https://devnq.org). If you're looking to find out more about
 DevNQ, North Queensland's software developer community, head to
-[the website](http://devnq.org).
+[the website](https://devnq.org).
 
 This repository is made available to allow for the submission of
 contributions by members and the general public. We welcome new content,
@@ -87,8 +87,8 @@ DevNQ welcomes contributions to our website. With our Jekyll-powered
 ### How to contribute
 
 If you'd like to contribute, start by searching through the
-[issues](https://github.com/tjdavey/devnq/issues) and
-[pull requests](https://github.com/tjdavey/devnq/pulls) to see whether
+[issues](https://github.com/devnq/devnq/issues) and
+[pull requests](https://github.com/devnq/devnq/pulls) to see whether
 someone else has already made contributions to these areas. You may be
 able to assist by reviewing their work, or addressing their issue.
 
@@ -109,7 +109,7 @@ submit a pull request which can be reviewed by our maintainers.
 
 - Contributors to all DevNQ projects are expected to conform to the
 [DevNQ Contributor Code of Conduct
-](https://github.com/tjdavey/devnq/blob/master/CODE-OF-CONDUCT.md).
+](https://github.com/devnq/devnq/blob/master/CODE-OF-CONDUCT.md).
 All contributors should read and understand these rules before making
 any commits, issues, comments, or pull requests.
 - Contributions must pass all validation and linting tests to be
