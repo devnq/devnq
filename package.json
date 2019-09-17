@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "bundle install",
-    "build": "node_modules/.bin/webpack && jekyll build",
-    "serve": "node_modules/.bin/concurrently --kill-others \"node_modules/.bin/webpack --watch\" \" jekyll serve\"",
+    "build": "node_modules/.bin/webpack && bundle exec jekyll build",
+    "serve": "node_modules/.bin/concurrently --kill-others \"node_modules/.bin/webpack --watch\" \" bundle exec jekyll serve\"",
     "test": "npm run test:jest && npm run test:html",
     "test:html": "bundle exec htmlproofer ./_site --assume-extension ./_site --check-favicon --check-html",
     "test:jest": "node_modules/.bin/jest",
