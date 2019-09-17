@@ -10760,7 +10760,7 @@ module.exports = g;
 function getNextMeetup(callback) {
   __WEBPACK_IMPORTED_MODULE_0_xhr___default()({
       method: "get",
-      uri: "https://d2qrtp8csnyzho.cloudfront.net/dev_nq/events?scroll=next_upcoming&photo-host=public&page=1&sig_id=204758206&sig=f08d518a43af7703b557e4d77dc2a85cd18a28b0",
+      uri: "https://d2qrtp8csnyzho.cloudfront.net/dev_nq/events?scroll=next_upcoming&photo-host=public&page=1",
   }, function (err, resp, body) {
     if(resp.statusCode == 200) {
       return callback(null, JSON.parse(body));
