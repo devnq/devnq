@@ -143,6 +143,23 @@ h2 {
   width: 50%;
 }
 
+.sunken-video {
+  overflow: hidden;
+}
+
+.sunken-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
 /* next-meetup-default is shown until results are loaded then #next-meetup-event or #next-meetup-none are shown */
 #next-meetup-default {
   text-align: center;
