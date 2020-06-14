@@ -1,7 +1,7 @@
 # DevNQ Website
 
-[![CircleCI](https://circleci.com/gh/devnq/devnq/tree/master.svg?style=svg)](https://circleci.com/gh/devnq/devnq/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/devnq/devnq/badge.svg?branch=master)](https://coveralls.io/github/devnq/devnq?branch=master)
+[![CircleCI](https://circleci.com/gh/devnq/devnq/tree/main.svg?style=svg)](https://circleci.com/gh/devnq/devnq/tree/main)
+[![Coverage Status](https://coveralls.io/repos/github/devnq/devnq/badge.svg?branch=main)](https://coveralls.io/github/devnq/devnq?branch=main)
 
 This repository contains the source code for the DevNQ Website,
 [devnq.org](https://devnq.org). If you're looking to find out more about
@@ -69,7 +69,7 @@ npm run build
 
 The website is hosted with Github Pages inside the same respository as
 this source is stored. Deployment is normally handled by Circle CI on
-all new commits to the `master` branch. Alternatively, with appropriate
+all new commits to the `main` branch. Alternatively, with appropriate
 Github access the website can be manually deployed from any machine.
 
 ```
@@ -109,7 +109,7 @@ submit a pull request which can be reviewed by our maintainers.
 
 - Contributors to all DevNQ projects are expected to conform to the
 [DevNQ Contributor Code of Conduct
-](https://github.com/devnq/devnq/blob/master/CODE-OF-CONDUCT.md).
+](https://github.com/devnq/devnq/blob/main/CODE-OF-CONDUCT.md).
 All contributors should read and understand these rules before making
 any commits, issues, comments, or pull requests.
 - Contributions must pass all validation and linting tests to be

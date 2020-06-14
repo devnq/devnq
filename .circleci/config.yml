@@ -145,17 +145,17 @@ jobs:
 
 workflows:
   version: 2
-  # Build on all source branches and automatically deploy on Master
+  # Build on all source branches and automatically deploy on Main
   build-test-deploy:
     jobs:
       - build-test:
           filters:
             branches:
               ignore:
-                - master
+                - main
                 - gh-pages
       - build-test-deploy:
           filters:
             branches:
               only:
-                - master
+                - main
