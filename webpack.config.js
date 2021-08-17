@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const BASE_PATH =  path.resolve(__dirname);
 
 module.exports = {
+  mode: 'production',
   entry: BASE_PATH+"/webpack/entry.js",
   output: {
     path: BASE_PATH+"/assets/js/",
@@ -14,25 +15,17 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
-      }
-    ],
-    loaders: [
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        loader: "babel-loader",
-        query: {
-          presets: ["es2017"]
-        }
+        use: ['babel-loader'],
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin("../css/styles.css"),
+    new MiniCssExtractPlugin(),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
