@@ -1,9 +1,10 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+npm-debug.log
 
-assets/css/styles.css
-assets/js/bundle.js
+assets/css/*
+assets/js/*
 
 node_modules
 vendor
