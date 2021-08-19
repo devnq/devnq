@@ -22,7 +22,7 @@ build.
 
 #### Prerequisites
 
-- Ruby 2.4.2
+- Ruby 2.6.0
 - Bundle 2.0.1
 - Node.js 8.x or higher
 - NPM 5.x or higher
@@ -123,6 +123,3 @@ content should be accompanied with evidence of the copyright holder
 ### Current Maintainers
 
 - [Tristan Davey](https://github.com/tjdavey)
-
-
-
