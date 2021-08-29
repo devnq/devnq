@@ -1,17 +1,20 @@
-<h2>Next Meetup</h2>
-<div id="next-meetup-default">
-  <i class="fas fa-spinner fa-pulse fa-2x my-5"></i>
-</div>
-<div id="next-meetup-none">
-  <p>
-    Join meetup to get instantly updated when we announce our next meetup!
-  </p>
-  <a id="meetup-join-link" class="btn btn-primary float-right" href="{{site.links.meetup}}">Join Now</a>
-</div>
-<div id="next-meetup-event" class="meetup-event">
-  <div id="meetup-event-title"></div>
-  <div id="meetup-event-datetime"></div>
-  <div id="meetup-event-location"></div>
-  <a id="meetup-event-link" class="btn btn-primary float-right">RSVP Now</a>
-  <div class="clearfix"></div>
+<div class="next-event-wrapper">
+  <h2>Next Event</h2>
+  <div id="next-event-default">
+    <i class="fas fa-spinner fa-pulse fa-2x my-5"></i>
+  </div>
+  <div id="next-event-none">
+    <p>
+      Join meetup to get instantly updated when we announce our next event!
+    </p>
+    <a id="event-join-link" class="btn btn-primary float-right" href="{{site.links.event}}">Join Now</a>
+  </div>
+  <div id="next-event" class="event-event">
+    <div id="event-title"></div>
+    <div><i class="mdi fa-calendar event-icon"></i><span id="event-datetime"></span></div>
+    <div><i class="mdi fa-map-marker event-icon"></i><span id="event-location"></span></div>
+    <div id="event-desc"></div>
+    <a id="event-link" class="btn btn-light float-right">RSVP Now</a>
+    <div class="clearfix"></div>
+  </div>
 </div>

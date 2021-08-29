@@ -14,33 +14,45 @@ export function getNextMeetup(callback) {
   });
 }
 
-export function renderNextMeetup(meetupData) {
+export function getNextMeetupData(meetupData) {
   const nextMeetup = meetupData[0];
+
   const nextMeetupDate = new Date(nextMeetup.time);
   const dateOutputOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
-  const dateOutput = nextMeetupDate.toLocaleString("en-US", dateOutputOptions);
-  const location = ["name", "address_1", "city"].map(function(p) {
-    return nextMeetup.venue[p]
-  }).filter(function(addressPart) {
-    return addressPart;
-  }).join(", ");
 
-  document.getElementById("meetup-event-title").innerHTML = nextMeetup.name;
-  document.getElementById("meetup-event-datetime").innerHTML = dateOutput;
-  document.getElementById("meetup-event-location").innerHTML = location;
-  document.getElementById("meetup-event-link").setAttribute('href', nextMeetup.link);
+  return {
+    name: nextMeetup.name,
+    date: nextMeetupDate.toLocaleString("en-US", dateOutputOptions),
+    location: ["name", "address_1", "city"].map(function(p) {
+      return nextMeetup.venue[p]
+    }).filter(function(addressPart) {
+      return addressPart;
+    }).join(", "),
+    description: $(nextMeetup.description).filter("p:first").first().text(),
+    link: nextMeetup.link,
+  }
+}
+
+export function renderNextMeetup(meetupData) {
+  const nextEvent = getNextMeetupData(meetupData);
+
+  document.getElementById("event-title").innerHTML = nextEvent.name;
+  document.getElementById("event-datetime").innerHTML = nextEvent.date;
+  document.getElementById("event-location").innerHTML = nextEvent.location;
+  document.getElementById("event-desc").innerHTML = nextEvent.description;
+  document.getElementById("event-link").setAttribute('href', nextEvent.link);
 
   meetup.hideDefaultMeetup();
-  document.getElementById("next-meetup-event").style.display = "block";
+  document.getElementById("next-event").style.display = "block";
 }
 
 export function renderNoneMeetup() {
   meetup.hideDefaultMeetup();
-  document.getElementById("next-meetup-none").style.display = "block";
+  document.getElementById("next-event-none").style.display = "block";
 }
 
 export function hideDefaultMeetup() {
-  document.getElementById("next-meetup-default").style.display = "none";
+  document.getElementById("next-event-default").style.display = "none";
 }
 
 export function startMeetupWidget(callback) {
