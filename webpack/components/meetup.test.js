@@ -9,7 +9,7 @@ describe('startMeetupWidget',  () => {
   });
 
   afterEach(() => {
-    meetup.getNextMeetup.mockRestore();
+    meetup.getMeetups.mockRestore();
     meetup.renderNextMeetup.mockRestore();
     meetup.renderNoneMeetup.mockRestore();
   });
@@ -19,7 +19,7 @@ describe('startMeetupWidget',  () => {
       {mock_result: true}
     ];
 
-    meetup.getNextMeetup.mockImplementation((callback) => {return callback(null, MOCK_RESULT)});
+    meetup.getMeetups.mockImplementation((callback) => {return callback(null, MOCK_RESULT)});
     meetup.renderNextMeetup.mockImplementation(() => {});
     meetup.renderNoneMeetup.mockImplementation(() => {});
 
@@ -28,7 +28,7 @@ describe('startMeetupWidget',  () => {
         done(err);
       }
 
-      expect(meetup.getNextMeetup).toHaveBeenCalled();
+      expect(meetup.getMeetups).toHaveBeenCalled();
       expect(meetup.renderNextMeetup).toHaveBeenCalledWith(MOCK_RESULT);
       expect(meetup.renderNoneMeetup).not.toHaveBeenCalled();
       done();
@@ -36,7 +36,7 @@ describe('startMeetupWidget',  () => {
   });
 
   test('renders a placeholder when an error occurs', (done) => {
-    meetup.getNextMeetup.mockImplementation((callback) => {return callback(new Error('Test Error'))});
+    meetup.getMeetups.mockImplementation((callback) => {return callback(new Error('Test Error'))});
     meetup.renderNextMeetup.mockImplementation(() => {});
     meetup.renderNoneMeetup.mockImplementation(() => {});
 
@@ -45,7 +45,7 @@ describe('startMeetupWidget',  () => {
         done(err);
       }
 
-      expect(meetup.getNextMeetup).toHaveBeenCalled();
+      expect(meetup.getMeetups).toHaveBeenCalled();
       expect(meetup.renderNextMeetup).not.toHaveBeenCalled();
       expect(meetup.renderNoneMeetup).toHaveBeenCalled();
       done();
@@ -55,7 +55,7 @@ describe('startMeetupWidget',  () => {
   test('renders a placeholder when no meetups exist', (done) => {
     const MOCK_RESULT = [];
 
-    meetup.getNextMeetup.mockImplementation((callback) => {return callback(null, MOCK_RESULT)});
+    meetup.getMeetups.mockImplementation((callback) => {return callback(null, MOCK_RESULT)});
     meetup.renderNextMeetup.mockImplementation(() => {});
     meetup.renderNoneMeetup.mockImplementation(() => {});
 
@@ -64,7 +64,7 @@ describe('startMeetupWidget',  () => {
         done(err);
       }
 
-      expect(meetup.getNextMeetup).toHaveBeenCalled();
+      expect(meetup.getMeetups).toHaveBeenCalled();
       expect(meetup.renderNextMeetup).not.toHaveBeenCalled();
       expect(meetup.renderNoneMeetup).toHaveBeenCalled();
       done();

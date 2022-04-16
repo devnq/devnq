@@ -1,20 +1,21 @@
-<div class="next-event-wrapper">
+<div class="next-event-wrapper meetup-widget" meetup_widget_limit="1">
   <h2>Next Event</h2>
-  <div id="next-event-default">
+  <div id="next-event-default" class="meetup-default">
     <i class="fas fa-spinner fa-pulse fa-2x my-5"></i>
   </div>
-  <div id="next-event-none">
+  <div id="next-event-none" class="meetup-none">
     <p>
       Join meetup to get instantly updated when we announce our next event!
     </p>
     <a id="event-join-link" class="btn btn-primary float-right" href="{{site.links.event}}">Join Now</a>
   </div>
-  <div id="next-event" class="event-event">
-    <div id="event-title"></div>
-    <div><i class="mdi fa-calendar event-icon"></i><span id="event-datetime"></span></div>
-    <div><i class="mdi fa-map-marker event-icon"></i><span id="event-location"></span></div>
-    <div id="event-desc"></div>
-    <a id="event-link" class="btn btn-light float-right">RSVP Now</a>
-    <div class="clearfix"></div>
+  <div class="next-events meetup-events">
+    <div class="next-event meetup-event">
+      <div class="meetup-event-title"></div>
+      <div><i class="mdi fa-calendar event-icon"></i><span class="meetup-event-datetime"></span></div>
+      <div class="meetup-event-desc"></div>
+      <a class="btn btn-light float-right meetup-event-link">RSVP Now</a>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </div>
