@@ -19,7 +19,9 @@ import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube';
 import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
 import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
 
-import { mdiDesktopClassic, mdiCalendar, mdiMapMarker, mdiMapMarkerOutline, mdiArrowRight } from '@mdi/js';
+import {
+  mdiDesktopClassic, mdiCalendar, mdiMapMarker, mdiMapMarkerOutline, mdiArrowRight
+} from '@mdi/js';
 
 const mdiConverter = new MDItoFAIcon();
 const faDesktopComputer = mdiConverter.convert(mdiDesktopClassic, 'desktop');
@@ -28,6 +30,21 @@ const faMapMarker = mdiConverter.convert(mdiMapMarker, 'map-marker');
 const faMapMarkerOutline = mdiConverter.convert(mdiMapMarkerOutline, 'map-marker-outline');
 const faArrowRight = mdiConverter.convert(mdiArrowRight, 'arrow-right');
 
-fontawesome.library.add(faEnvelope, faSpinner, faFacebook, faMeetup, faYoutube, faLinkedin, faTwitter, faSlack, faCalendar, faMapMarker, faUsers, faDesktopComputer, faCalendar, faMapMarker, faMapMarkerOutline, faArrowRight);
-
-import * as meetup from './components/meetup';
+fontawesome.library.add(
+  faEnvelope,
+  faSpinner,
+  faFacebook,
+  faMeetup,
+  faYoutube,
+  faLinkedin,
+  faTwitter,
+  faSlack,
+  faCalendar,
+  faMapMarker,
+  faUsers,
+  faDesktopComputer,
+  faCalendar,
+  faMapMarker,
+  faMapMarkerOutline,
+  faArrowRight
+);

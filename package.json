@@ -7,9 +7,10 @@
     "postinstall": "bundle install",
     "build": "node_modules/.bin/webpack && bundle exec jekyll build",
     "serve": "node_modules/.bin/concurrently --kill-others \"node_modules/.bin/webpack --watch\" \" bundle exec jekyll serve\"",
-    "test": "npm run test:jest && npm run test:html",
+    "test": "npm run test:jest && npm run test:html && npm run lint",
     "test:html": "bundle exec htmlproofer ./_site --assume-extension ./_site --check-favicon --check-html",
     "test:jest": "node_modules/.bin/jest",
+    "lint": "node_modules/.bin/eslint webpack/**.js",
     "cov": "node_modules/.bin/jest --coverage",
     "cov:coveralls": "node_modules/.bin/jest --coverage --coverageReporters=text-lcov | coveralls",
     "predeploy": "npm run build",
@@ -28,26 +29,22 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.16.11",
-    "@fortawesome/fontawesome": "^1.1.3",
-    "@fortawesome/fontawesome-free-brands": "^5.0.13",
-    "@fortawesome/fontawesome-free-solid": "^5.0.13",
-    "@fortawesome/fontawesome-pro-light": "^5.0.13",
-    "@jamescoyle/svg-icon": "^0.1.0",
-    "@mdi/js": "^5.9.55",
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-es2017": "^6.24.1",
-    "bootstrap": "^4.3.1",
     "concurrently": "^3.5.1",
     "coveralls": "^3.0.3",
     "css-loader": "^6.2.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
     "exports-loader": "^0.6.4",
-    "fontawesome-svg-mdi": "^1.0.1",
     "gh-pages": "^1.1.0",
     "jekyll": "^3.0.0-beta1",
     "jest": "^27.0.6",
-    "jquery": "^3.1.1",
+    "jest-fetch-mock": "^3.0.3",
     "mini-css-extract-plugin": "^2.2.0",
     "popper.js": "^1.15.0",
     "style-loader": "^0.20.1",
@@ -68,18 +65,30 @@
     }
   },
   "jest": {
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "./webpack/test/jest.setup.js"
+    ]
   },
   "dependencies": {
     "buffer": "^6.0.3",
     "core-js": "^3.21.1",
     "https-browserify": "^1.0.0",
+    "nock": "^13.2.4",
     "regenerator-runtime": "^0.13.9",
     "rss-parser": "^3.12.0",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "timers-browserify": "^2.0.12",
     "url": "^0.11.0",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "jquery": "^3.1.1",
+    "bootstrap": "^4.3.1",
+    "@fortawesome/fontawesome": "^1.1.3",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "fontawesome-svg-mdi": "^1.0.1",
+    "@jamescoyle/svg-icon": "^0.1.0",
+    "@mdi/js": "^5.9.55"
   }
 }
