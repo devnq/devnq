@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'bootstrap/dist/js/bootstrap.min';
 
+import './components/events';
 import './components/main.css';
 
 import fontawesome from '@fortawesome/fontawesome';

@@ -18,21 +18,6 @@ class MeetupReader {
   }
 }
 
-MeetupReader._parseMeetups = function _parseMeetups(meetupFeed) {
-  return Array.from(meetupFeed.getElementsByTagName('item')).map(MeetupReader._parseMeetup);
-};
-
-MeetupReader._parseMeetup = function _parseMeetup(meetupItem) {
-  const descParsed = this._parseDescription(meetupItem.getElementsByTagName('description').item(0).innerHTML);
-
-  return {
-    name: MeetupReader._readCdata(meetupItem.getElementsByTagName('title').item(0).innerHTML),
-    link: MeetupReader._readCdata(meetupItem.getElementsByTagName('guid').item(0).innerHTML),
-    description: MeetupReader._readDesc(descParsed),
-    date: MeetupReader._readDate(descParsed)
-  };
-};
-
 MeetupReader._parseDescription = function _parseDescription(descriptionString) {
   const rawCdata = MeetupReader._readCdata(descriptionString);
   return new window.DOMParser().parseFromString(rawCdata, 'text/html');
@@ -55,6 +40,21 @@ MeetupReader._readDesc = function _readDesc(descParsed) {
 
 MeetupReader._readCdata = function _readCdata(cdataString) {
   return new window.DOMParser().parseFromString(`<div xmlns="http://www.w3.org/1999/xhtml">${cdataString}</div>`, 'text/xml').firstChild.firstChild.data;
+};
+
+MeetupReader._parseMeetups = function _parseMeetups(meetupFeed) {
+  return Array.from(meetupFeed.getElementsByTagName('item')).map(MeetupReader._parseMeetup);
+};
+
+MeetupReader._parseMeetup = function _parseMeetup(meetupItem) {
+  const descParsed = MeetupReader._parseDescription(meetupItem.getElementsByTagName('description').item(0).innerHTML);
+
+  return {
+    name: MeetupReader._readCdata(meetupItem.getElementsByTagName('title').item(0).innerHTML),
+    link: MeetupReader._readCdata(meetupItem.getElementsByTagName('guid').item(0).innerHTML),
+    description: MeetupReader._readDesc(descParsed),
+    date: MeetupReader._readDate(descParsed)
+  };
 };
 
 export default MeetupReader;

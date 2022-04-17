@@ -58,10 +58,13 @@ class EventWidget {
   }
 }
 
-window.addEventListener('load', () => {
-  const meetupReader = new MeetupReader(MEETUP_FEED_URL);
-  const meetups = meetupReader.get();
+window.addEventListener('load', async () => {
+  const widgets = document.getElementsByClassName('meetup-widget');
+  if (widgets.length > 0) {
+    const meetupReader = new MeetupReader(MEETUP_FEED_URL);
+    const meetups = await meetupReader.get();
 
-  Array.from(document.getElementsByClassName('meetup-widget'))
-    .map((widgetRoot) => new EventWidget(widgetRoot, meetups));
+    Array.from(document.getElementsByClassName('meetup-widget'))
+      .map((widgetRoot) => new EventWidget(widgetRoot, meetups));
+  }
 });
