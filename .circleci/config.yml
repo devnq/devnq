@@ -2,7 +2,7 @@ version: 2.1
 executors:
   jekyll:
     docker:
-      - image: circleci/ruby:2.6.0-node
+      - image: cimg/ruby:2.6.9-node
     working_directory: ~/repo
     environment:
       BUNDLE_PATH: ~/repo/vendor/bundle
