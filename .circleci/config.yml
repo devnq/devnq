@@ -19,20 +19,6 @@ jobs:
             - node-deps-{{ checksum "package-lock.json" }}
             - ruby-deps-{{ checksum "Gemfile.lock" }}
 
-      # Setup dependency environment
-      - run:
-          name: Uninstall Global Bundle and reinstall the correct version
-          command: |
-            sudo gem update --system
-            sudo gem uninstall bundler
-            sudo rm /usr/local/bin/bundle
-            sudo rm /usr/local/bin/bundler
-            sudo gem install bundler
-
-      - run:
-          name: Configure NPM FontAwesome Repository Access
-          command: npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" $FA_NPM_TOKEN
-
       # Install and update dependencies
       - run:
           name: Install Dependencies
