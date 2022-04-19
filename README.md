@@ -41,7 +41,28 @@ npm install
 ```
 
 NPM install will install all NPM dependencies followed by Ruby Gemfile
-dependencies using the Bundle tool.
+dependencies using the Bundler tool.
+
+If Bundler requests `sudo` access, you can avoid this requirement by
+installing gems locally by running:
+
+```
+bundle config set --local path 'vendor/bundle'
+npm install
+```
+
+#### Troubleshooting
+
+On recent versions of macOS, the `ffi` gem may fail to build its native
+extensions. This can be resolved with the following, noting that paths
+may need to be adjusted depending on your Homebrew prefix:
+
+```
+brew install libffi  # or reinstall, if already present
+export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
+npm install
+```
 
 ### Local Development
 
