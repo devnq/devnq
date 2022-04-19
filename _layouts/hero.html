@@ -1,4 +1,8 @@
-{% include header.html %}
-  {% include heroBackground.html %}
+{% if page.backgroundImage != nil and page.backgroundColor != nil %}
+  {% include header.html simpleColor=true %}
+{% else %}
+  {% include header.html %}
+{% endif %}
+  {% include heroBackground.html backgroundImage=page.backgroundImage backgroundColor=page.backgroundColor %}
   {{ content }}
-{% include heroFooter.html %}
+{% include footer.html %}

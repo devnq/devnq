@@ -9,6 +9,7 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 24pt;
+  font-weight: bold;
   color: #d33232;
 }
 
@@ -63,6 +64,10 @@ h2 {
   width: 177px;
 }
 
+#header .navbar-brand-image-white, #header .navbar-brand-image-white .dev {
+  fill: #fff !important;
+}
+
 #header .navbar-nav {
   font-family: 'Montserrat', Futura, 'Trebuchet MS', Arial, sans-serif;
 }
@@ -97,6 +102,47 @@ h2 {
   transform: rotate(-45deg);
 }
 
+.hero-content {
+  padding: 40px 20px;
+}
+
+.hero-content-white {
+  color: #fff;
+}
+
+.hero-content-white h1 {
+  color: #fff;
+}
+
+.hero-feature-card-block {
+  position: relative;
+}
+
+.hero-feature-card {
+  color: #ffffff;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.hero-feature-card-community {
+  background-color: #263238;
+  background-image: url("/assets/images/backgrounds/events-bg.jpg");
+}
+
+.hero-feature-card-learn {
+  background-color: #126668;
+  background-image: url("/assets/images/backgrounds/learn-bg.jpg");
+}
+
+.hero-feature-card-underlay {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+
 #content {
   flex: 1 0 auto;
   padding-bottom: 30px;
@@ -116,8 +162,48 @@ h2 {
   margin-bottom: .8em;
 }
 
+.content-area-feature {
+  background-color: #eeeeee;
+}
+
 .dark-content {
   color: #fff;
+}
+
+.illustration-small {
+  max-height: 200px;
+  max-width: 200px;
+  margin: 30px;
+}
+
+.illustration-medium {
+  max-height: 400px;
+  max-width: 400px;
+  margin: 30px;
+}
+
+.event-info-box {
+  background-color: #eeeeee;
+  color: #2e2e2e;
+  font-size: 0.9em;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  clear: both;
+}
+
+.event-info-box dl,.event-info-box div  {
+  display: inline-block;
+  border-right: 1px solid #AAA;
+  padding: 0 15px;
+  margin: 0;
+}
+
+.event-info-box dl:last-child, .event-info-box div:last-child {
+  border: none;
 }
 
 .sunken {
@@ -155,34 +241,104 @@ h2 {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* next-meetup-default is shown until results are loaded then #next-meetup-event or #next-meetup-none are shown */
-#next-meetup-default {
+/**
+  MEETUP WIDGET
+ */
+
+/* next-event-default is shown until results are loaded then #next-event-event or #next-event-none are shown */
+.meetup-default {
+  display: block;
+}
+
+.meetup-events, .meetup-none {
+  display: none;
+}
+
+/**
+  NEXT EVENT WIDGET
+ */
+
+.next-event-wrapper {
+  background-color: #d33232;
+  padding: 30px;
+}
+
+.next-event-wrapper .meetup-default {
   text-align: center;
   color: rgba(255, 255, 255, 0.25);
 }
 
-#next-meetup-event, #next-meetup-none {
-  display: none;
+.next-event-wrapper .meetup-none p {
+  font-style: italic;
 }
 
-#next-meetup-event {
+.next-event {
   margin: 20px 0;
 }
 
-#next-meetup-event #meetup-event-datetime {
-  font-size: 0.8em;
+.next-event .meetup-event-title {
+  font-weight: bold;
+  font-size: 16pt;
+  margin-bottom: 1em;
 }
 
-#next-meetup-event #meetup-event-location {
-  font-style: italic;
+.next-event .event-icon {
+  width: 1em;
+  margin-right: 0.8em;
 }
 
-#next-meetup-event #meetup-event-link {
+.next-event .meetup-event-datetime {
+  line-height: 2.2em;
+}
+
+.next-event .meetup-event-desc {
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2em;
+  padding: 0 !important;
+  margin: 25px 0;
+  -webkit-line-clamp : 3;
+  max-height: 3.6em;
+}
+
+.next-event .meetup-event-link {
   margin-top: 20px;
 }
 
-#next-meetup-none p {
-  font-style: italic;
+/**
+  UPCOMING EVENTS WIDGET
+ */
+
+.upcoming-event-wrapper .meetup-default {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.upcoming-event {
+  padding: 25px 0;
+  border-bottom: 2px solid #999;
+}
+
+.upcoming-event:last-child {
+  border-bottom: none;
+}
+
+
+.upcoming-event .meetup-event-title {
+  font-weight: bold;
+}
+
+.upcoming-event .event-icon {
+  width: 1em;
+  margin-right: 0.8em;
+}
+
+.upcoming-event .meetup-event-datetime {
+  line-height: 2.5em;
 }
 
 .page-content, .footer {
@@ -212,26 +368,70 @@ h2 {
   max-width: 200px;
 }
 
-.footer-com {
-  min-width: 135px;
-  width: 20%;
-  text-align: center;
+.header-programmes {
+  height: 200px;
+  display: flex;
 }
 
-.footer-com a p {
+.header-programmes h3 {
+  color: #fff;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+
+.header-programmes-events {
+  background-size: cover;
+  background-image: url("/assets/images/programmes/event-bg.jpg");
+}
+
+.header-programmes-hardware-library {
+  background-size: cover;
+  background-image: url("/assets/images/programmes/hardware-library-bg.jpg");
+}
+
+.header-programmes-fah {
+  background-size: cover;
+  background-image: url("/assets/images/programmes/fah-bg.jpg");
+}
+
+.footer-col {
+  min-width: 135px;
+  width: 25%;
+}
+
+.footer-col h4 {
+  font-size: 14pt;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-col a p {
   font-size: 10pt;
 }
 
-.footer-com i, .footer-com svg {
+.footer-col i, .footer-col svg {
   margin: 20px;
 }
 
-.footer-com .btn {
+.footer-col .btn {
   color: #787878;
 }
 
-.footer-com .btn:hover {
+.footer-col .btn:hover {
   color: #2e2e2e;
+}
+
+.footer-col .sponsor-logo-link {
+  opacity: 0.7;
+}
+
+.footer-col .sponsor-logo-link:hover {
+  opacity: 1;
 }
 
 .footer-meta {

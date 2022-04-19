@@ -5,7 +5,13 @@ links:
   slack: 'https://devnq.slack.com/'
   slack_invite: 'https://join.slack.com/t/devnq/shared_invite/zt-3u0y3l3b-7TlWhk0xi88b1Sg8jKRgBA'
   meetup: 'https://www.meetup.com/dev_nq/'
+  linkedin: 'https://www.linkedin.com/company/devnq'
   facebook: 'https://www.facebook.com/devnorthqueensland/'
   twitter: 'https://twitter.com/dev_nq'
   youtube: 'https://www.youtube.com/channel/UCMKRM7oJFptsQYRhpS4KPaA'
   mailing_list: 'https://eepurl.com/diRYxv'
+  sponsors:
+    spnq: 'https://spnq.org'
+    safetyculture: 'https://safetyculture.com'
+    jcu: 'https://jcu.edu.au'
+

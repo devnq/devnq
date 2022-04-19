@@ -2,7 +2,7 @@ version: 2.1
 executors:
   jekyll:
     docker:
-      - image: circleci/ruby:2.6.0-node
+      - image: cimg/ruby:2.6.9-node
     working_directory: ~/repo
     environment:
       BUNDLE_PATH: ~/repo/vendor/bundle
@@ -18,16 +18,6 @@ jobs:
           keys:
             - node-deps-{{ checksum "package-lock.json" }}
             - ruby-deps-{{ checksum "Gemfile.lock" }}
-
-      # Setup dependency environment
-      - run:
-          name: Uninstall Global Bundle and reinstall the correct version
-          command: |
-            sudo gem update --system
-            sudo gem uninstall bundler
-            sudo rm /usr/local/bin/bundle
-            sudo rm /usr/local/bin/bundler
-            sudo gem install bundler
 
       - run:
           name: Configure NPM FontAwesome Repository Access
@@ -85,16 +75,6 @@ jobs:
           command: |
             git config --global user.email "circleci@devnq.org"
             git config --global user.name "Circle CI"
-
-      # Setup dependency environment
-      - run:
-          name: Uninstall Global Bundle and reinstall the correct version
-          command: |
-            sudo gem update --system
-            sudo gem uninstall bundler
-            sudo rm /usr/local/bin/bundle
-            sudo rm /usr/local/bin/bundler
-            sudo gem install bundler
 
       - run:
           name: Configure NPM FontAwesome Repository Access

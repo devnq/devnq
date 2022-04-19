@@ -45,7 +45,21 @@
       <div id="header" class="container">
         <nav class="navbar navbar-expand-sm navbar-dark">
           <a class="navbar-brand" href="/index.html">
-            <img src="/assets/images/devnq.svg" class="navbar-brand-image" alt="DevNQ">
+            <svg class="navbar-brand-image {% if include.simpleColor %}navbar-brand-image-white{% endif %}" alt="DevNQ" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 865 257">
+              <defs>
+                <style>
+                  .nq {
+                    fill: #fff;
+                  }
+
+                  .dev {
+                    fill: #d33232;
+                  }
+                </style>
+              </defs>
+              <path id="DevNQ_dev" data-name="DevNQ Dev" class="dev" d="M76.267,26.92H17.019V199.473H74.292q49.864,0,74.061-23.451t24.193-63.689q0-40.234-24.934-62.825T76.267,26.92h0Zm50.238,130.217q-16.663,14.939-48.016,14.935H46.149V53.828H75.28q67.887,0,67.889,59.245Q143.169,142.2,126.505,157.137ZM318.446,126.9q0-28.385-18.762-44.558T254.136,66.17A66.283,66.283,0,0,0,207.6,84.438q-19.754,18.271-19.749,49.248t19.379,49.371q19.377,18.393,47.029,18.391,34.068,0,55.3-21.97l-15.8-17.28q-12.84,15.552-37.524,15.552a45.913,45.913,0,0,1-27.65-8.764q-12.1-8.758-13.084-23.081H318.446V126.9ZM227.6,99.126a43.734,43.734,0,0,1,27.279-9.257q15.181,0,25.551,8.887T290.8,124.182H215.5Q215.5,108.387,227.6,99.126ZM403.862,199.473L456.693,68.145H428.056l-39.993,99.237L348.07,68.145H319.433l52.83,131.328h31.6Z"/>
+              <path id="DevNQ_nq" data-name="DevNQ NQ" class="nq" d="M602.1,155.78L501.867,26.92h-29.13V199.473h29.13V73.576l97.761,125.9h31.6V26.92H602.1V155.78Zm166.143,69.613A57.467,57.467,0,0,0,798.6,234.28q27.646,0,49.127-22.711l-16.54-22.957a35.054,35.054,0,0,1-13.7,12.836,37.889,37.889,0,0,1-18.392,4.937q-12.838,0-21.231-11.108a87.086,87.086,0,0,0,41.474-32.215q15.554-22.339,15.553-51.223,0-38.012-26.168-63.566t-64.68-25.55q-38.511,0-64.68,25.55T653.2,111.962q0,38.141,26.168,63.69t64.68,25.549l3.7-.247A47.987,47.987,0,0,0,768.239,225.393Zm36.784-113.431q0,26.048-17.651,44.311t-43.326,18.268q-25.678,0-43.326-18.268t-17.651-44.311q0-26.041,17.651-44.311t43.326-18.267q25.672,0,43.326,18.267T805.023,111.962Z"/>
+            </svg>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -53,19 +67,25 @@
           <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item mx-sm-3">
-                <a class="nav-link" href="{{site.links.slack_invite}}">Slack</a>
+                <a class="nav-link" href="{{ site.baseurl }}/events.html">Events</a>
               </li>
               <li class="nav-item mx-sm-3">
-                <a class="nav-link" href="{{site.links.meetup}}">Meetups</a>
+                <a class="nav-link" href="{{site.links.slack}}">Slack Community</a>
               </li>
               <li class="nav-item ml-sm-3">
-                <a class="nav-link" href="{{site.links.twitter}}"><i class="fab fa-twitter d-sm-inline d-none"></i><span class="d-inline d-sm-none">Twitter</span></a>
+                <a class="nav-link" href="{{site.links.meetup}}"><i class="fab fa-meetup d-sm-inline d-none" title="Meetup"></i><span class="d-inline d-sm-none">Meetup</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{site.links.facebook}}"><i class="fab fa-facebook d-sm-inline d-none"></i><span class="d-inline d-sm-none">Facebook</span></a>
+                <a class="nav-link" href="{{site.links.twitter}}"><i class="fab fa-twitter d-sm-inline d-none" title="Twitter"></i><span class="d-inline d-sm-none">Twitter</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{site.links.youtube}}"><i class="fab fa-youtube d-sm-inline d-none"></i><span class="d-inline d-sm-none">Youtube</span></a>
+                <a class="nav-link" href="{{site.links.facebook}}"><i class="fab fa-facebook d-sm-inline d-none" title="Facebook"></i><span class="d-inline d-sm-none">Facebook</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{site.links.linkedin}}"><i class="fab fa-linkedin d-sm-inline d-none" title="LinkedIn"></i><span class="d-inline d-sm-none">LinkedIn</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{site.links.youtube}}"><i class="fab fa-youtube d-sm-inline d-none" title="YouTube"></i><span class="d-inline d-sm-none">YouTube</span></a>
               </li>
             </ul>
           </div>
